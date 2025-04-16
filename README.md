@@ -82,7 +82,12 @@ Run with:
 ```bash
 spark-submit word_count.py
 ```
+## Output:
+![alt text](image.png)
 
+![alt text](<Screenshot 2025-04-15 193411.png>)
+
+![alt text](<Screenshot 2025-04-15 193431.png>)
 ---
 
 ## **Project 2: Deploy a Node.js Web Server with Docker**
@@ -152,6 +157,12 @@ Deploy a simple Node.js server in a Docker container, push the image to Docker H
 
 Access at: `http://your-ec2-public-ip/`.
 
+
+## Output:
+
+![alt text](<Screenshot 2025-04-15 212543.png>)
+
+![alt text](<Screenshot 2025-04-15 212520.png>)
 ---
 
 ## **Project 3: ETL Pipeline with AWS Lambda**

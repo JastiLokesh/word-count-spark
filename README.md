@@ -20,7 +20,7 @@ Ensure you have:
 ### **2. Set Up EC2/LightSail Instance**  
 1. Launch an Amazon Linux 2 instance and connect via SSH:  
    ```bash
-   ssh -i "your-key.pem" ec2-user@your-instance-ip
+   ssh -i "word_count.pem" ec2-user@i-048a6b56203d13794
    ```
 
 2. Install **Java 11**:  
@@ -51,12 +51,12 @@ Create `word_count.py`:
 from pyspark.sql import SparkSession
 
 # AWS Credentials
-AWS_ACCESS_KEY_ID = 'YOUR_ACCESS_KEY'
-AWS_SECRET_ACCESS_KEY = 'YOUR_SECRET_KEY'
+AWS_ACCESS_KEY_ID = 'TEMP'
+AWS_SECRET_ACCESS_KEY = 'TEMP'
 
 # S3 paths
-S3_INPUT = 's3a://your-bucket-name/input_file.txt'
-S3_OUTPUT = 's3a://your-bucket-name/output_folder/'
+S3_INPUT = 's3a://lokesh-word-count/input.txt'
+S3_OUTPUT = 's3a://lokesh-word-count/output_folder/'
 
 # Spark Session
 spark = SparkSession.builder \
@@ -123,7 +123,7 @@ Deploy a simple Node.js server in a Docker container, push the image to Docker H
 ### **2. Dockerize the Application**  
 1. Create a `Dockerfile`:  
    ```dockerfile
-   FROM node:14
+   FROM node:20
    WORKDIR /app
    COPY package*.json ./
    RUN npm install
@@ -134,8 +134,8 @@ Deploy a simple Node.js server in a Docker container, push the image to Docker H
 
 2. Build and push the image to Docker Hub:  
    ```bash
-   docker build -t your-dockerhub-username/webserver:latest .
-   docker push your-dockerhub-username/webserver:latest
+   docker build -t lokeshjasti25/webserver:latest .
+   docker push lokeshjasti25/webserver:latest
    ```
 
 ---
@@ -151,11 +151,11 @@ Deploy a simple Node.js server in a Docker container, push the image to Docker H
 
 2. Run the container:  
    ```bash
-   docker pull your-dockerhub-username/webserver:latest
-   docker run -d -p 80:3000 your-dockerhub-username/webserver:latest
+   docker pull lokeshjasti25/webserver:latest
+   docker run -d -p 80:3000 lokeshjasti25/webserver:latest
    ```
 
-Access at: `http://your-ec2-public-ip/`.
+Access at: `http://3.139.87.109/`.
 
 
 ## Output:
